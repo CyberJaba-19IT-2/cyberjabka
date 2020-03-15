@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp17
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Columns: ");
+            int columns = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Rows: ");
+            int rows = Convert.ToInt32(Console.ReadLine());
+            int[,] arr = new int[columns, rows];
+            int count = 0;
+            int s = 1;
+
+            for (int columnsCount = 0; columnsCount < columns; columnsCount++)
+            {
+            Console.WriteLine($"{s} column: ");
+                 for (int rowsCount = 0; rowsCount < rows; rowsCount++)
+                 {
+                    arr[columnsCount, rowsCount] = Convert.ToInt32(Console.ReadLine());
+                    if ( arr[columnsCount, rowsCount] == 7)
+                    {
+                        count++;
+                    }
+                 }
+                s++;
+            }
+            Console.WriteLine($"{count}-times");
+            Console.ReadKey();
+        }
+    }
+}
