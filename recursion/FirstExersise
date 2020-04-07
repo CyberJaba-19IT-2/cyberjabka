@@ -8,13 +8,13 @@ namespace ConsoleApp22
 {
     class Program
     {
-        static int Function(int x)
+         static int Function(int x)
         {
             if (x <= 0)
             {
                 return 0;
             }
-            if (x > 0)
+            else
             {
                 Console.WriteLine(x);
             }
