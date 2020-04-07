@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp22
+{
+    class Program
+    {
+        static int Function(int x)
+        {
+            if (x <= 0)
+            {
+                return 0;
+            }
+            if (x > 0)
+            {
+                Console.WriteLine(x);
+            }
+            return Function(x - 1);
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter x: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Total: ");
+            Console.WriteLine(Function(x));
+            Console.ReadKey();
+        }
+    }
+}
