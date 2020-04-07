@@ -1,0 +1,32 @@
+ class Program
+    {
+        static int Array(int[] arr, int size)
+        {
+            int score = size-1;
+            if (score == 0)
+            {
+                return arr[0];
+            }
+            if (score > 0)
+            {
+                Console.WriteLine(arr[score]);
+            }
+            size--;
+            return Array(arr, size);
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter size of the array: ");
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[size];
+            Console.WriteLine("Enter your numbers: ");
+            for (int count = 0; count < size; count++)
+            {
+                arr[count] = Convert.ToInt32(Console.ReadLine());
+            }
+            int aaa = 
+                Array(arr, size);
+            Console.WriteLine(aaa);
+            Console.ReadKey();
+        }
+    }
