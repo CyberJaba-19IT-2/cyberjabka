@@ -1,0 +1,29 @@
+ class Program
+    {
+        static int Exchange(ulong[] arr, int count)
+        {
+            ulong num = arr[0];
+            if (num >= 1)
+            {
+                count++;
+                ulong a = 0;
+                a = num % 2;
+                arr[count] = a;
+                arr[0] = arr[0] / 2;
+                return Exchange(arr, count);
+            }
+            for (int i = count; i > 2; i--)
+            {
+                Console.Write(arr[i]);
+            }
+            return 0;
+        }
+        static void Main(string[] args)
+        {
+            int count = 1;
+            ulong[] arr = new ulong[265999999];
+            arr[0] = Convert.ToUInt64(Console.ReadLine());
+            Exchange(arr, count);
+            Console.WriteLine(count);
+            Console.ReadKey();
+        }
