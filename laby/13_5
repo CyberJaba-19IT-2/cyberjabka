@@ -1,0 +1,47 @@
+internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            char[,] arr = new char[3, 3];
+            int count = 0;
+            int row = 0;
+            int column = 0;
+            int counterOfLetters = 0;
+            Console.WriteLine("Enter numbers: ");
+            for (int rowCount = 0; rowCount < 3; rowCount++)
+            {
+                for (int columnCount = 0; columnCount < 3; columnCount++)
+                {
+                    arr[rowCount, columnCount] = Convert.ToChar(Console.ReadLine());
+                }
+            }
+            for (int rowCount = 0; rowCount < 3; rowCount++)
+            {
+                for (int columnCount = 0; columnCount < 3; columnCount++)
+                {
+                    if ((Convert.ToInt32(arr[rowCount, columnCount]) > 64 & Convert.ToInt32(arr[rowCount, columnCount]) < 91) || Convert.ToInt32(arr[rowCount, columnCount]) > 96 & Convert.ToInt32(arr[rowCount, columnCount]) < 123)
+                    {
+                        counterOfLetters++;
+                    }
+                }
+            }
+            string account = Convert.ToString(arr[0, 0]);
+            do
+            {
+                count++;
+                row++;
+                column++;
+                account = account + " " + Convert.ToString(arr[row, column]);
+            }
+            while (count < 2);
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                    Console.Write(String.Format("{0,3}", arr[i, j]));
+                Console.WriteLine();
+            }
+            Console.WriteLine("Letter: " + counterOfLetters);
+            Console.WriteLine("Main diagonal: " + account);
+            Console.ReadKey();
+        }
+    }
