@@ -1,31 +1,34 @@
  internal class Program
     {
-        private static int Exchange(ulong[] arr, ulong count)
+        private static string Exchange(int[] arr, int count)
         {
-            ulong num = arr[0];
+            int num = arr[0];
             if (num >= 1)
             {
                 count++;
-                ulong modifiedNum = 0;
+                int modifiedNum = 0;
                 modifiedNum = num % 2;
                 arr[count] = modifiedNum;
                 arr[0] = arr[0] / 2;
                 return Exchange(arr, count);
             }
-            for (ulong counter = count; counter > 2; counter--)
+            string buffer = "";
+            for (int counter = count; counter > 1; counter--)
             {
-                Console.Write(arr[counter]);
+                buffer = buffer + "" + Convert.ToString(arr[counter]);
             }
-            return 0;
+            Console.WriteLine(buffer);
+            return buffer;
         }
 
         private static void Main(string[] args)
         {
-            ulong count = 1;
-            ulong[] arr = new ulong[265999999];
-            arr[0] = Convert.ToUInt64(Console.ReadLine());
+            int count = 1;
+            int[] arr = new int[265999999];
+            arr[0] = Convert.ToInt32(Console.ReadLine());
             Exchange(arr, count);
-            Console.WriteLine(count);
+            string finalNum = Exchange(arr, count);
+            Console.WriteLine(finalNum);
             Console.ReadKey();
         }
     }
